@@ -7,6 +7,10 @@ git clone https://github.com/BharatKosti/IPL.git
 Under the project root folder
 ##### First Step #######
 ./gradlew build
+
+#### Second Step #######
+Enter user name and password of database i sent you guys in application.properties
+
 ##### To run ######
 ./gradlew tomcatRun
 
