@@ -1,13 +1,17 @@
 # IPL
 ISEM 501 Project
-git clone <url>
+
+####### To get the project install GIT in your local machine and then clone the project#######
+git clone https://github.com/BharatKosti/IPL.git
+
 Under the project root folder
 ##### First Step #######
 ./gradlew build
 ##### To run ######
 ./gradlew tomcatRun
 
-access
+ACCESS
+
 http://localhost:8090/IndianPremierLeague/teams/teamDetails/3 # For Team Details
 http://localhost:8090/IndianPremierLeague/teams/ # For all teams list
 
