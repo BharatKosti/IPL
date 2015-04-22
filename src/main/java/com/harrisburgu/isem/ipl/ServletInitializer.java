@@ -1,4 +1,4 @@
-package com.harrisburgu.isem.ipl;
+/*package com.harrisburgu.isem.ipl;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
@@ -10,4 +10,4 @@ public class ServletInitializer extends SpringBootServletInitializer {
 		return application.sources(IndianPremierLeagueApplication.class);
 	}
 
-}
+}*/

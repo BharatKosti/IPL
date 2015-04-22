@@ -1,9 +1,15 @@
 package com.harrisburgu.isem.ipl.entity;
 
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+import com.harrisburgu.isem.ipl.entity.Batsmen;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -11,7 +17,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "TEAMS")
-public class Teams {
+public class Teams implements Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,6 +26,11 @@ public class Teams {
   private int wins;
   private int losses;
   private int matches;
+  @OneToMany(fetch = FetchType.EAGER, mappedBy = "team")
+  private Set<Batsmen> batsmenSet = new HashSet<>(0);
+
+  @OneToMany(fetch = FetchType.EAGER, mappedBy = "team")
+  private Set<Bowlers> bowlersSet = new HashSet<>(0);
 
   public int getId() {
     return Id;
@@ -59,5 +70,21 @@ public class Teams {
 
   public void setMatches(int matches) {
     this.matches = matches;
+  }
+
+  public Set<Batsmen> getBatsmenSet() {
+    return batsmenSet;
+  }
+
+  public void setBatsmenSet(Set<Batsmen> batsmenSet) {
+    this.batsmenSet = batsmenSet;
+  }
+
+  public Set<Bowlers> getBowlersSet() {
+    return bowlersSet;
+  }
+
+  public void setBowlersSet(Set<Bowlers> bowlersSet) {
+    this.bowlersSet = bowlersSet;
   }
 }

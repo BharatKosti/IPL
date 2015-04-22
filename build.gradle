@@ -4,10 +4,12 @@ buildscript {
     }
     repositories {
         mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
         classpath("io.spring.gradle:dependency-management-plugin:0.4.1.RELEASE")
+        classpath 'com.bmuschko:gradle-tomcat-plugin:2.1'
     }
 }
 
@@ -17,6 +19,7 @@ apply plugin: 'idea'
 apply plugin: 'spring-boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'war'
+apply plugin: 'com.bmuschko.tomcat'
 
 
 war {
@@ -38,10 +41,18 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile("org.springframework.boot:spring-boot-starter-web")
     compile 'com.zaxxer:HikariCP-java6:2.3.6'
-    compile 'javax.el:javax.el-api:3.0.0'
+    //compile 'javax.el:javax.el-api:2.2.5'
+    //compile 'javax.servlet:jsp-api:2.0'
+    compile 'javax.servlet:jstl:1.2'
+    //compile 'jstl:jstl:1.2'
     runtime("mysql:mysql-connector-java")
     providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
-    testCompile("org.springframework.boot:spring-boot-starter-test") 
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+
+    def tomcatVersion = '7.0.59'
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+           "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
+           "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
 }
 
 
@@ -54,4 +65,8 @@ eclipse {
 
 task wrapper(type: Wrapper) {
     gradleVersion = '2.3'
+}
+
+tomcat {
+    httpPort = 8090
 }
