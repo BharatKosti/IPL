@@ -1,4 +1,4 @@
-package com.harrisburgu.isem.ipl;
+/*package com.harrisburgu.isem.ipl;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,4 +15,4 @@ public class IndianPremierLeagueApplicationTests {
 	public void contextLoads() {
 	}
 
-}
+}*/

@@ -41,8 +41,15 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile("org.springframework.boot:spring-boot-starter-web")
     compile 'com.zaxxer:HikariCP-java6:2.3.6'
+
+    /////////TILES//////////
+    compile 'org.apache.tiles:tiles-core:3.0.5'
+    compile 'org.apache.tiles:tiles-jsp:3.0.5'
+    compile 'org.apache.tiles:tiles-api:3.0.5'
+    compile 'org.apache.tiles:tiles-servlet:3.0.5'
+    compile 'org.apache.tiles:tiles-template:3.0.5'
     //compile 'javax.el:javax.el-api:2.2.5'
-    //compile 'javax.servlet:jsp-api:2.0'
+   // compile 'javax.servlet:jsp-api:2.0'
     compile 'javax.servlet:jstl:1.2'
     //compile 'jstl:jstl:1.2'
     runtime("mysql:mysql-connector-java")

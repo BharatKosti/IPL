@@ -12,7 +12,7 @@
 <div class="col-sm-offset-1 col-sm-10">
 
   <legend>
-    <spring:message code="table.bowlers.title" />
+    <h1><spring:message code="table.bowlers.title" /></h1>
   </legend>
 
   <div>
@@ -46,7 +46,7 @@
 <div class="col-sm-offset-1 col-sm-10">
 
   <legend>
-    <spring:message code="table.batsmen.title" />
+    <h1><spring:message code="table.batsmen.title" /></h1>
   </legend>
 
   <div>

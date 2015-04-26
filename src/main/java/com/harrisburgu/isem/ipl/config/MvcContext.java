@@ -10,6 +10,9 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.tiles3.SpringBeanPreparerFactory;
+import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
+
 
 /**
  * Created by bharatkosti on 4/21/15.
@@ -44,4 +47,12 @@ public class MvcContext extends WebMvcConfigurerAdapter {
     resource.setDefaultEncoding("UTF-8");
     return resource;
   }
+
+  /*@Bean
+  public TilesConfigurer tilesConfigurer(){
+    TilesConfigurer tilesConfigurer = new TilesConfigurer();
+    tilesConfigurer.setDefinitions("/WEB-INF/tiles.xml");
+    tilesConfigurer.setPreparerFactoryClass(new SpringBeanPreparerFactory());
+    return tilesConfigurer;
+  }*/
 }

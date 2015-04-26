@@ -30,7 +30,7 @@
       <c:forEach var="t" items="${teams}">
       <tr>
         <td>${t.id}</td>
-        <td>${t.name}</td>
+        <td><a href="<c:url value="/teams/teamDetails/${t.id}"/>">${t.name}</a></td>
         <td>${t.wins}</td>
         <td>${t.losses}</td>
         <td>${t.matches}</td>
